@@ -1,6 +1,6 @@
 # OpenClaw Dashboard
 
-A beautiful, real-time dashboard for monitoring your AI agent's activity. Built for the Clawdbot/Clawd ecosystem.
+A beautiful, real-time dashboard for monitoring your AI agent's activity. Built for the OpenClaw/Clawdbot/Clawd ecosystem.
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black) ![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38bdf8) ![Neon](https://img.shields.io/badge/Neon-Postgres-00e599) ![License](https://img.shields.io/badge/License-MIT-green)
 
