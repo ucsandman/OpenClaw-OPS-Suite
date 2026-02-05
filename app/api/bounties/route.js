@@ -1,8 +1,12 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import { NextResponse } from 'next/server';
 
 // Bounties API - placeholder until bounty tracking is added to Neon
 export async function GET() {
   try {
+    const sql = neon(process.env.DATABASE_URL);
     // Return placeholder data for now
     const bounties = [];
     const cveResearch = [];
@@ -26,3 +30,4 @@ export async function GET() {
     return NextResponse.json({ error: 'An error occurred while fetching bounty data', bounties: [], cveResearch: [], stats: {} }, { status: 500 });
   }
 }
+

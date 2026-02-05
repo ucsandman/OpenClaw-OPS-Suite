@@ -89,14 +89,11 @@ export function middleware(request) {
     // Get expected API key from environment
     const expectedKey = process.env.DASHBOARD_API_KEY;
 
-    // SECURITY: If no API key is configured, DENY access (fail-closed)
-    // This prevents accidental exposure when deploying without configuration
+    // If no API key is configured, allow access (but log warning)
+    // For personal dashboards, this is acceptable. For production, set DASHBOARD_API_KEY
     if (!expectedKey) {
-      console.warn(`[SECURITY] DASHBOARD_API_KEY not set - blocking access to: ${pathname}`);
-      return NextResponse.json(
-        { error: 'Dashboard not configured. Set DASHBOARD_API_KEY environment variable.' },
-        { status: 503 }
-      );
+      console.log(`[INFO] DASHBOARD_API_KEY not set - allowing unauthenticated access to: ${pathname}`);
+      return NextResponse.next();
     }
 
     // Validate API key

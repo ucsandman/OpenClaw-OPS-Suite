@@ -1,10 +1,14 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import { NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
 
-const sql = neon(process.env.DATABASE_URL);
+// sql initialized inside handler for serverless compatibility
 
 export async function GET() {
   try {
+    const sql = neon(process.env.DATABASE_URL);
     // Get all contacts
     const rawContacts = await sql`SELECT * FROM contacts ORDER BY last_contact DESC NULLS LAST`;
 
@@ -68,3 +72,4 @@ export async function GET() {
     return NextResponse.json({ error: 'An error occurred while fetching relationship data', contacts: [], interactions: [], stats: {} }, { status: 500 });
   }
 }
+

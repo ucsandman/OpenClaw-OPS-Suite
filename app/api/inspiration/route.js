@@ -1,10 +1,14 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import { NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
 
-const sql = neon(process.env.DATABASE_URL);
+// sql initialized inside handler for serverless compatibility
 
 export async function GET() {
   try {
+    const sql = neon(process.env.DATABASE_URL);
     // Get all ideas
     const ideas = await sql`SELECT * FROM ideas ORDER BY captured_at DESC LIMIT 50`;
 
@@ -34,3 +38,4 @@ export async function GET() {
     return NextResponse.json({ error: 'An error occurred while fetching inspiration data', ideas: [], stats: {} }, { status: 500 });
   }
 }
+

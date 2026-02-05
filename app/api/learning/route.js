@@ -1,10 +1,14 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import { NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
 
-const sql = neon(process.env.DATABASE_URL);
+// sql initialized inside handler for serverless compatibility
 
 export async function GET() {
   try {
+    const sql = neon(process.env.DATABASE_URL);
     // Get all decisions with their outcomes joined
     const decisions = await sql`
       SELECT d.*, 
@@ -42,3 +46,4 @@ export async function GET() {
     return NextResponse.json({ error: 'An error occurred while fetching learning data', decisions: [], lessons: [], stats: {} }, { status: 500 });
   }
 }
+

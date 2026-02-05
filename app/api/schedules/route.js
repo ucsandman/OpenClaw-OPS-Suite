@@ -1,10 +1,14 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import { NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
 
-const sql = neon(process.env.DATABASE_URL);
+// sql initialized inside handler for serverless compatibility
 
 export async function GET() {
   try {
+    const sql = neon(process.env.DATABASE_URL);
     // Get all scheduled jobs
     const schedules = await sql`SELECT * FROM scheduled_jobs ORDER BY next_run ASC NULLS LAST`;
 
@@ -27,3 +31,4 @@ export async function GET() {
     return NextResponse.json({ error: 'An error occurred while fetching schedules data', schedules: [], stats: {} }, { status: 500 });
   }
 }
+

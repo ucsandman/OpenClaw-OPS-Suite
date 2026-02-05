@@ -1,10 +1,14 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import { NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
 
-const sql = neon(process.env.DATABASE_URL);
+// sql initialized inside handler for serverless compatibility
 
 export async function GET() {
   try {
+    const sql = neon(process.env.DATABASE_URL);
     // Get all goals
     const goals = await sql`SELECT * FROM goals ORDER BY created_at DESC`;
 
@@ -44,3 +48,4 @@ export async function GET() {
     return NextResponse.json({ error: 'An error occurred while fetching goals data', goals: [], stats: {} }, { status: 500 });
   }
 }
+
