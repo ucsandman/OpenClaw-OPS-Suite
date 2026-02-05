@@ -57,7 +57,7 @@ Your dashboard needs somewhere to store data. Neon gives you a free database:
 
 **Mac/Linux:**
 - Open Terminal
-- Navigate to the folder: `cd ~/Desktop/OpenClaw-Dashboard-main`
+- Navigate to the folder: `cd ~/Desktop/OpenClaw-OPS-Suite-main`
 - Run: `chmod +x install-mac.sh && ./install-mac.sh`
 - Paste your database connection string when asked
 
