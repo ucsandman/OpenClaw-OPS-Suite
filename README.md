@@ -16,6 +16,16 @@ A beautiful, real-time dashboard for monitoring your AI agent's activity. Built 
 
 **Already deployed?** Visit `/setup` for a guided walkthrough!
 
+## Using this with Clawd/Clawdbot (recommended)
+
+This repo includes a **tools bundle** (memory, security, learning, token tracking, etc.) designed to be installed into your **Clawd workspace**.
+
+From this repo root:
+- Windows: `powershell -ExecutionPolicy Bypass -File .\clawd-tools\install-windows.ps1`
+- Mac/Linux: `bash ./clawd-tools/install-mac.sh`
+
+See: [`clawd-tools/README.md`](clawd-tools/README.md)
+
 ## Features
 
 ### 🧠 Memory & Ops Tools

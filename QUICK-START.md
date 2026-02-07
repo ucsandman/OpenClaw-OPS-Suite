@@ -87,6 +87,24 @@ Security note:
 
 ---
 
+## Optional: Install the OpenClaw Tools into your Clawd workspace
+
+If you’re using Clawd/Clawdbot, you can install the included ops tools bundle into your workspace.
+
+From the repo root:
+
+**Windows:**
+```powershell
+powershell -ExecutionPolicy Bypass -File .\clawd-tools\install-windows.ps1
+```
+
+**Mac/Linux:**
+```bash
+bash ./clawd-tools/install-mac.sh
+```
+
+---
+
 ## Step 4: Start the Dashboard
 
 After installation:

@@ -1,0 +1,15 @@
+# Local findings/logs produced by tools
+outbound_findings.json
+*.log
+*.out
+
+# Never store secrets here
+secrets/
+.env
+.env.*
+.env.local
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3

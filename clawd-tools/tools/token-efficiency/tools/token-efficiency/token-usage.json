@@ -1,0 +1,20 @@
+{
+  "daily_limit": 18000,
+  "weekly_limit": 126000,
+  "usage": {
+    "2026-02-04": {
+      "total": 53000,
+      "operations": [
+        {
+          "timestamp": "2026-02-04T07:34:19.668336",
+          "tokens_in": 50000,
+          "tokens_out": 3000,
+          "total": 53000,
+          "operation": "browser_snapshot_linkedin",
+          "model": "opus"
+        }
+      ]
+    }
+  },
+  "sessions": []
+}
