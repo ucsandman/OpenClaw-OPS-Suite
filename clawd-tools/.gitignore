@@ -3,6 +3,11 @@ outbound_findings.json
 *.log
 *.out
 
+# Local state files / sample outputs
+session_state.json
+token-usage.json
+*.jsonl
+
 # Never store secrets here
 secrets/
 .env
