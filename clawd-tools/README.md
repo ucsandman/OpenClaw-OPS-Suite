@@ -10,6 +10,14 @@ These tools should be copied into **your Clawd workspace** like:
 
 This repo’s dashboard app can live anywhere. The tools bundle is what belongs in the Clawd workspace.
 
+## What’s included (quick glance)
+
+- **Security**: outbound filter, secret rotation tracker, audit logger, skill safety checker
+- **Tokens**: token capture + dashboards, efficiency/budget helpers
+- **Memory**: memory search, memory health scanner, memory extractor
+- **Ops tracking**: learning database, relationship tracker, goal tracker, open loops
+- **Workflow/ops helpers**: session handoff, context manager, daily digest, error logger, project monitor, API monitor
+
 ## Install (recommended)
 
 ### Windows (PowerShell)

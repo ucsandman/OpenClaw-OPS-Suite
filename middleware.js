@@ -89,10 +89,18 @@ export function middleware(request) {
     // Get expected API key from environment
     const expectedKey = process.env.DASHBOARD_API_KEY;
 
-    // If no API key is configured, allow access (but log warning)
-    // For personal dashboards, this is acceptable. For production, set DASHBOARD_API_KEY
+    // If no API key is configured:
+    // - dev/local: allow (convenience)
+    // - production: block (prevents accidentally exposing your dashboard data)
     if (!expectedKey) {
-      console.log(`[INFO] DASHBOARD_API_KEY not set - allowing unauthenticated access to: ${pathname}`);
+      if (process.env.NODE_ENV === 'production') {
+        console.warn(`[SECURITY] DASHBOARD_API_KEY not set in production - blocking access to: ${pathname}`);
+        return NextResponse.json(
+          { error: 'Server misconfigured: set DASHBOARD_API_KEY to protect /api/* endpoints.' },
+          { status: 503 }
+        );
+      }
+      console.log(`[INFO] DASHBOARD_API_KEY not set (dev) - allowing unauthenticated access to: ${pathname}`);
       return NextResponse.next();
     }
 

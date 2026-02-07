@@ -91,6 +91,13 @@ Security note:
 
 If you’re using Clawd/Clawdbot, you can install the included ops tools bundle into your workspace.
 
+**Tools bundle (quick glance)**
+- Security (outbound filter, secret tracker, audit logger, skill checker)
+- Tokens (token capture + efficiency helpers)
+- Memory (memory search + memory health + extractor)
+- Ops tracking (learning DB, relationships, goals, open loops)
+- Workflow helpers (session handoff, context manager, daily digest, error logger, project/API monitor)
+
 From the repo root:
 
 **Windows:**

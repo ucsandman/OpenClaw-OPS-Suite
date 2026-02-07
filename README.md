@@ -26,6 +26,15 @@ From this repo root:
 
 See: [`clawd-tools/README.md`](clawd-tools/README.md)
 
+### Tools bundle (at a glance)
+
+Installed into your Clawd workspace, you get:
+- **Security**: outbound filter, secret rotation tracker, audit logger, skill safety checker
+- **Tokens**: token capture + dashboards, efficiency/budget helpers
+- **Memory**: memory search, memory health scanner, memory extractor
+- **Ops tracking**: learning database, relationship tracker, goal tracker, open loops
+- **Workflow/ops helpers**: session handoff, context manager, daily digest, error logger, project monitor, API monitor
+
 ## Features
 
 ### 🧠 Memory & Ops Tools
